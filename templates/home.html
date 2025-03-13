@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona gry.pl</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body class="bg-blue-300 flex justify-center min-h-screen">
+<script src="https://cdn.tailwindcss.com"></script>
+        <div class="w-full max-w-screen-2xl bg-white shadow-lg mx-auto flex flex-col min-h-screen">
+        <header class="bg-red-500 text-white p-4 text-xl font-bold flex flex-col md:flex-row justify-between items-center w-full">
+            <span class="text-2xl">Gry.pl</span>
+            <nav class="flex flex-wrap justify-center gap-4 text-sm mt-2 md:mt-0">
+                <a href="#" class="hover:underline">Nowe</a>
+                <a href="#" class="hover:underline">Logiczne</a>
+                <a href="#" class="hover:underline">Akcji</a>
+                <a href="#" class="hover:underline">Multiplayer</a>
+                <a href="#" class="hover:underline">Symulatory</a>
+                <a href="#" class="hover:underline">Zręcznościowe</a>
+                <a href="#" class="hover:underline">Sport</a>
+                <a href="#" class="hover:underline">MMO</a>
+            </nav>
+            <input type="text" placeholder="Przeszukaj gry..." class="px-2 py-1 rounded text-black mt-2 md:mt-0">
+        </header>
+{% block content %}
+
+
+{% endblock %}
+
+        <footer class="bg-red-600 text-white text-center p-6 mt-4 w-full">
+            <p class="text-sm">Darmowe gry online na Gry.pl</p>
+            <p class="text-xs">© 2025 Gry.pl - Wszelkie prawa zastrzeżone</p>
+        </footer>
+</body>
+</html>

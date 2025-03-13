@@ -1,0 +1,18 @@
+{% extends "home.html" %}
+{% load static %}
+{% block extra_style %}
+{% endblock %}
+
+{% block content %}
+<div class="w-full max-w-screen-2xl bg-white shadow-lg mx-auto flex flex-col min-h-screen">
+    <h1>Lista gier</h1>
+    <br>
+    {% for game in games %}
+        {{ game.title }} <br>
+        {{ game.file }}
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+{% endblock %}
