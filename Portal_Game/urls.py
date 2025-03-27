@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from app_Portal_Game.views.cms_views import index, about, snake
+from app_Portal_Game.views.cms_views import index, about, snake, tetris, tictac
 from app_Portal_Game.views.games_views import games_index
 
 urlpatterns = [
@@ -27,6 +27,8 @@ urlpatterns = [
     path('about/', about, name='about'),
     path('games/', games_index, name='games:index'),
     path('snake/', snake, name='snake'),
+    path('tetris/', tetris, name='tetris'),
+    path('tictac/', tictac, name='tictac')
 ]
 
 if settings.DEBUG:

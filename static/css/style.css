@@ -109,3 +109,47 @@ background: black;
 display: block;
 margin: auto;
 }
+
+
+
+        /* Kontener gry */
+        .game-container {
+            text-align: center;
+        }
+
+        /* Stylowanie planszy */
+        .game-board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 5px;
+            margin: 20px auto;
+        }
+
+        /* Stylowanie komórek planszy */
+        .cell {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f0f0;
+            border: 2px solid #ccc;
+            font-size: 32px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100px;
+            height: 100px;
+        }
+
+        .cell.taken {
+            cursor: not-allowed;
+        }
+
+        #gameStatus {
+            margin-top: 20px;
+        }
+
+        /* Zwiększenie rozmiaru przycisku restartu */
+        .button {
+            font-size: 16px;
+            padding: 10px 20px;
+        }

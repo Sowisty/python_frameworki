@@ -10,3 +10,8 @@ def about(request):
 def snake(request):
     return render(request, 'snake.html')
 
+def tetris(request):
+    return render(request, 'tetris.html')
+
+def tictac(request):
+    return render(request, 'tictac.html')

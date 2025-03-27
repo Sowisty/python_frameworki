@@ -1,3 +1,5 @@
+{% extends "home.html" %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -5,61 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kółko i Krzyżyk</title>
     <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" rel="stylesheet">
-    <style>
-        /* Ustawienie body i html na pełną wysokość, wyśrodkowanie zawartości */
-        body, html {
-            height: 100%;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #f7f7f7;
-        }
-
-        /* Kontener gry */
-        .game-container {
-            text-align: center;
-        }
-
-        /* Stylowanie planszy */
-        .game-board {
-            display: grid;
-            grid-template-columns: repeat(3, 100px);
-            grid-template-rows: repeat(3, 100px);
-            gap: 5px;
-            margin: 20px auto;
-        }
-
-        /* Stylowanie komórek planszy */
-        .cell {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #f0f0f0;
-            border: 2px solid #ccc;
-            font-size: 32px;
-            cursor: pointer;
-            font-weight: bold;
-            width: 100px;
-            height: 100px;
-        }
-
-        .cell.taken {
-            cursor: not-allowed;
-        }
-
-        #gameStatus {
-            margin-top: 20px;
-        }
-
-        /* Zwiększenie rozmiaru przycisku restartu */
-        .button {
-            font-size: 16px;
-            padding: 10px 20px;
-        }
-    </style>
 </head>
 <body>
+{% block content %}
     <div class="game-container">
         <h1 class="title is-2 my-5">Gra w Kółko i Krzyżyk</h1>
         <div class="game-board" id="gameBoard">
@@ -77,76 +27,9 @@
         <button class="button is-link" id="restartBtn" style="display: none;">Zagraj ponownie</button>
         <h2 id="gameStatus" class="is-size-4"></h2>
     </div>
-
-    <script>
-        const cells = document.querySelectorAll('.cell');
-        const restartBtn = document.getElementById('restartBtn');
-        const gameStatus = document.getElementById('gameStatus');
-
-        let currentPlayer = 'X'; // Rozpoczyna gracz X
-        let gameBoard = ['', '', '', '', '', '', '', '', '']; // Pusta plansza
-        let gameOver = false;
-
-        const winningCombinations = [
-            [0, 1, 2],
-            [3, 4, 5],
-            [6, 7, 8],
-            [0, 3, 6],
-            [1, 4, 7],
-            [2, 5, 8],
-            [0, 4, 8],
-            [2, 4, 6]
-        ];
-
-        // Obsługuje kliknięcie na komórkę
-        cells.forEach(cell => {
-            cell.addEventListener('click', handleCellClick);
-        });
-
-        // Funkcja obsługująca kliknięcie
-        function handleCellClick(event) {
-            const cellIndex = event.target.dataset.cell;
-
-            if (gameBoard[cellIndex] !== '' || gameOver) return;
-
-            gameBoard[cellIndex] = currentPlayer;
-            event.target.textContent = currentPlayer;
-            event.target.classList.add('taken');
-
-            if (checkWinner()) {
-                gameStatus.textContent = `${currentPlayer} wygrywa!`;
-                gameOver = true;
-                restartBtn.style.display = 'inline-block';
-            } else if (gameBoard.every(cell => cell !== '')) {
-                gameStatus.textContent = 'Remis!';
-                gameOver = true;
-                restartBtn.style.display = 'inline-block';
-            } else {
-                currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-            }
-        }
-
-        // Sprawdza, czy któryś z graczy wygrał
-        function checkWinner() {
-            return winningCombinations.some(combination => {
-                const [a, b, c] = combination;
-                return gameBoard[a] && gameBoard[a] === gameBoard[b] && gameBoard[a] === gameBoard[c];
-            });
-        }
-
-        // Restartuje grę
-        restartBtn.addEventListener('click', () => {
-            gameBoard = ['', '', '', '', '', '', '', '', ''];
-            gameOver = false;
-            currentPlayer = 'X';
-            gameStatus.textContent = '';
-            restartBtn.style.display = 'none';
-
-            cells.forEach(cell => {
-                cell.textContent = '';
-                cell.classList.remove('taken');
-            });
-        });
-    </script>
+{% endblock %}
+    {% block extra_scripts %}
+    <script src="{% static 'js/tictac.js' %}"></script>
+    {% endblock %}
 </body>
 </html>
