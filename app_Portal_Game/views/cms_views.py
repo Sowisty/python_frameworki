@@ -15,3 +15,8 @@ def tetris(request):
 
 def tictac(request):
     return render(request, 'tictac.html')
+
+def meris(request):
+    return render(request, 'meris.html')
+
+
