@@ -103,3 +103,9 @@ body {
     color: #fff;
     padding: 1rem;
 }
+
+canvas {
+background: black;
+display: block;
+margin: auto;
+}

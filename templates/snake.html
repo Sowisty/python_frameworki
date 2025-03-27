@@ -1,15 +1,18 @@
 {% extends "home.html" %}
 {% load static %}
-{% block extra_style %}
-{% endblock %}
-
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+</head>
 {% block content %}
-<div class="">
-    <h1>Lista gier</h1>
+<body>
     <canvas id="gameCanvas" width="1000" height="1000"></canvas>
-</div>
+</body>
 {% endblock %}
-
 {% block extra_scripts %}
 <script src="{% static 'js/snake.js' %}"></script>
 {% endblock %}
+</html>

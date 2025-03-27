@@ -1,20 +1,7 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake Game</title>
-    <style>
-        canvas { background: black; display: block; margin: auto; }
-    </style>
-</head>
-<body>
-    <canvas id="gameCanvas" width="400" height="400"></canvas>
-    <script>
         const canvas = document.getElementById("gameCanvas");
         const ctx = canvas.getContext("2d");
-        const box = 20;
-        const canvasSize = 400;
+        const box = 50; // Zwiększono rozmiar segmentów
+        const canvasSize = 1000;
         let snake = [{ x: 200, y: 200 }];
         let direction = "RIGHT";
         let food = generateFood("green");
@@ -110,9 +97,10 @@
 
             ctx.fillStyle = "lime";
             snake.forEach(segment => ctx.fillRect(segment.x, segment.y, box, box));
-            
+
             ctx.fillStyle = "white";
-            ctx.fillText("Score: " + score, 10, 20);
+            ctx.font = "40px Arial";
+            ctx.fillText("Score: " + score, 20, 50);
         }
 
         gameInterval = setInterval(move, 200);
@@ -128,6 +116,3 @@
                 generateRedWall();
             }
         }, Math.random() * 12000 + 1000);
-    </script>
-</body>
-</html>

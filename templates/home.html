@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Strona gry.pl</title>
-
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 <body class="bg-blue-300 flex justify-center min-h-screen">
@@ -34,5 +34,8 @@
             <p class="text-sm">Darmowe gry online na Gry.pl</p>
             <p class="text-xs">© 2025 Gry.pl - Wszelkie prawa zastrzeżone</p>
         </footer>
+{% block extra_scripts %}
+
+{% endblock %}
 </body>
 </html>
