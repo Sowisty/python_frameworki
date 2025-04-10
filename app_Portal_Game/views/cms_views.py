@@ -22,4 +22,7 @@ def meris(request):
 def eagler(request):
     return render(request, 'eagler.html')
 
+def unity(request):
+    return render(request, 'unity.html')
+
 
