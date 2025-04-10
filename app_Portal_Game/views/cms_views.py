@@ -19,4 +19,7 @@ def tictac(request):
 def meris(request):
     return render(request, 'meris.html')
 
+def eagler(request):
+    return render(request, 'eagler.html')
+
 
