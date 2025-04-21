@@ -1,7 +1,7 @@
         const canvas = document.getElementById("gameCanvas");
         const ctx = canvas.getContext("2d");
-        const box = 50; // Zwiększono rozmiar segmentów
-        const canvasSize = 1000;
+        const box = 30; // Zmniejszono rozmiar segmentów dla 800x800
+        const canvasSize = 700;
         let snake = [{ x: 200, y: 200 }];
         let direction = "RIGHT";
         let food = generateFood("green");
@@ -103,7 +103,7 @@
             ctx.fillText("Score: " + score, 20, 50);
         }
 
-        gameInterval = setInterval(move, 200);
+        gameInterval = setInterval(move, 100);
         setInterval(() => {
             if (!blueFood) {
                 blueFood = generateFood("blue");
@@ -116,3 +116,4 @@
                 generateRedWall();
             }
         }, Math.random() * 12000 + 1000);
+

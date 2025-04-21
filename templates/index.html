@@ -1,32 +1,31 @@
 {% extends "home.html" %}
 {% block content %}
+{% load static %}
+
+<div class="container mx-auto p-4 bg-white flex-grow text-center">
+    <div class="flex flex-row justify-center items-center gap-14 flex-wrap">
+        <a href="/snake" class="block">
+            <img src="{% static 'images/snake.png' %}" alt="Snake" width="250" height="250">
+            <span class="block mt-2 font-semibold">Snake</span>
+        </a>
+        <a href="/tetris" class="block">
+            <img src="{% static 'images/tetris.png' %}" alt="Tetris" width="250" height="250">
+            <span class="block mt-2 font-semibold">Tetris</span>
+        </a>
+        <a href="/tictac" class="block">
+            <img src="{% static 'images/tictac.png' %}" alt="Tic Tac" width="250" height="250">
+            <span class="block mt-2 font-semibold">Tic Tac</span>
+        </a>
+        <a href="/unity" class="block">
+            <img src="{% static 'images/unity.png' %}" alt="Gra z Unity" width="250" height="250">
+            <span class="block mt-2 font-semibold">Gra z Unity</span>
+        </a>
+        <a href="/eagler" class="block">
+            <img src="{% static 'images/eagler.png' %}" alt="Eaglercraft" width="250" height="250">
+            <span class="block mt-2 font-semibold">Eaglercraft</span>
+        </a>
+    </div>
+</div>
 
 
-        <div class="container mx-auto p-4 grid md:grid-cols-3 gap-4 bg-white flex-grow">
-            <div>
-                <h2 class="text-lg font-bold mb-2">Polecane Gry</h2>
-                <div class="grid grid-cols-3 gap-2">
-                    <img src="https://via.placeholder.com/100" class="rounded-lg">
-                    <img src="https://via.placeholder.com/100" class="rounded-lg">
-                    <img src="https://via.placeholder.com/100" class="rounded-lg">
-                </div>
-            </div>
-
-            <div>
-                <h2 class="text-lg font-bold mb-2">Wybieramy dla Ciebie</h2>
-                <div class="relative">
-                    <img src="https://via.placeholder.com/300" class="rounded-lg">
-                    <button class="absolute bottom-2 right-2 bg-blue-500 text-white px-2 py-1 text-sm rounded">Zagraj Teraz</button>
-                </div>
-            </div>
-
-            <div>
-                <h2 class="text-lg font-bold mb-2">Najpopularniejsze Gry</h2>
-                <div class="grid grid-cols-3 gap-2">
-                    <img src="https://via.placeholder.com/100" class="rounded-lg">
-                    <img src="https://via.placeholder.com/100" class="rounded-lg">
-                    <img src="https://via.placeholder.com/100" class="rounded-lg">
-                </div>
-            </div>
-        </div>
 {% endblock %}
