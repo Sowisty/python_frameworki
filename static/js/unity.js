@@ -25,7 +25,7 @@ var canvas = document.querySelector("#unity-canvas");
         updateBannerVisibility();
       }
 
-      var buildUrl = "http://127.0.0.1:8000/unity/Build";
+      var buildUrl = "http://127.0.0.1:8000/static/Build";
       var loaderUrl = buildUrl + "/unity.loader.js";
       var config = {
         arguments: [],
